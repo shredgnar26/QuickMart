@@ -49,8 +49,13 @@
   @media(max-width:860px){nav ul{display:none} .menu-toggle{display:block} nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:72px;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line)}}
 
   /* Hero */
-  .hero{background:var(--concrete);border-bottom:6px solid var(--signal)}
-  .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding:72px 24px}
+  .hero{position:relative;color:#fff;background:var(--asphalt) url(hero.jpg) center/cover no-repeat;border-bottom:6px solid var(--signal);isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,24,28,.92) 0%,rgba(21,24,28,.72) 55%,rgba(21,24,28,.35) 100%);z-index:-1}
+  .hero .lede{color:#d6d9dd}
+  .hero .btn.ghost{color:#fff;border-color:#fff}
+  .hero .btn.ghost:hover{background:#fff;color:var(--asphalt)}
+  .hero .eyebrow{color:var(--amber)}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding:96px 24px}
   .hero p.lede{margin:22px 0 32px}
   .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
   /* Price board — the signature */
@@ -163,7 +168,7 @@
 <body>
 
 <div class="topbar"><div class="wrap">
-  <span>Wholesale fuel desk: <a href="tel:+15010000000">(501) 000-0000</a> · Mon–Fri 7am–5pm</span>
+  <span>Wholesale fuel supply · Convenience stores across Arkansas</span>
   <span><a href="#resources">Employee resources</a></span>
 </div></div>
 
@@ -201,7 +206,7 @@
     <div class="row"><div class="grade">Plus <span>89 OCTANE</span></div><div class="price" data-price="3.09">3.09<sup>9</sup></div></div>
     <div class="row"><div class="grade">Premium <span>93 OCTANE</span></div><div class="price" data-price="3.39">3.39<sup>9</sup></div></div>
     <div class="row"><div class="grade">Diesel <span>ULTRA LOW SULFUR</span></div><div class="price" data-price="3.19">3.19<sup>9</sup></div></div>
-    <div class="foot">SAMPLE PRICES · EDIT IN SITE ADMIN</div>
+    <div class="foot">PRICES VARY BY LOCATION</div>
   </div>
 </div></section>
 
@@ -243,12 +248,11 @@
 <section id="stores" class="stores"><div class="wrap">
   <span class="eyebrow">Locations</span>
   <h2>Find a Quick Mart</h2>
-  <p class="lede">Replace the cards below with your actual store addresses, hours, and services.</p>
+  <p class="lede">Neighborhood stores across Arkansas, several open 24 hours. Every location carries fuel, fountain and coffee, deli, and Arkansas Scholarship Lottery.</p>
   <div class="store-grid">
-    <div class="store"><b>Store #1 — Name</b><p>123 Main St, City, AR 72000<br>Open 24 hours</p><div class="tags"><span>DELI</span><span>DIESEL</span><span>LOTTERY</span><span>ATM</span></div></div>
-    <div class="store"><b>Store #2 — Name</b><p>456 Highway 65, City, AR 72000<br>5am – 11pm</p><div class="tags"><span>DELI</span><span>BEER</span><span>LOTTERY</span></div></div>
-    <div class="store"><b>Store #3 — Name</b><p>789 County Rd, City, AR 72000<br>6am – 10pm</p><div class="tags"><span>DIESEL</span><span>OFF-ROAD DIESEL</span></div></div>
-    <div class="store"><b>Store #4 — Name</b><p>101 Elm St, City, AR 72000<br>Open 24 hours</p><div class="tags"><span>DELI</span><span>LOTTERY</span><span>ATM</span></div></div>
+    <div class="store"><b>What you'll find</b><p>Hot deli with daily specials, fountain and cappuccino bar, ATM, and restrooms checked every shift.</p><div class="tags"><span>DELI</span><span>FOUNTAIN</span><span>LOTTERY</span><span>ATM</span></div></div>
+    <div class="store"><b>Fuel at every pump</b><p>Regular, Plus, and Premium gasoline plus ultra-low-sulfur diesel. Off-road diesel at select locations.</p><div class="tags"><span>87 · 89 · 93</span><span>DIESEL</span></div></div>
+    <div class="store"><b>Find the nearest store</b><p>Store addresses and hours are available from the office — <a href="#contact" style="color:var(--amber)">contact us</a> and we'll point you to the closest location.</p></div>
   </div>
 </div></section>
 
@@ -282,7 +286,7 @@
         <div><label>Position applying for <span class="req">*</span></label>
           <select name="position" required><option value="">Select…</option><option>Cashier</option><option>Deli / Kitchen</option><option>Overnight Cashier</option><option>Assistant Manager</option><option>Store Manager</option><option>Fuel Delivery / Wholesale</option><option>Other</option></select></div>
         <div><label>Store location <span class="req">*</span></label>
-          <select name="store" required><option value="">Select…</option><option>Store #1 — Name</option><option>Store #2 — Name</option><option>Store #3 — Name</option><option>Store #4 — Name</option><option>Any location</option></select></div>
+          <select name="store" required><option value="">Select…</option><option>Closest store to my address</option><option>Any location</option></select></div>
         <div class="full"><label>Full name <span class="req">*</span></label><input type="text" name="fullName" required autocomplete="name"></div>
         <div class="full"><label>Present address (street, city, state, ZIP) <span class="req">*</span></label><input type="text" name="presentAddress" required autocomplete="street-address"></div>
         <div class="full"><label>Permanent address (if different)</label><input type="text" name="permanentAddress"></div>
@@ -385,7 +389,7 @@
 <section id="resources" class="resources"><div class="wrap">
   <span class="eyebrow">Employee resources</span>
   <h2>Training & forms</h2>
-  <p class="lede">Everything a new cashier or manager needs on day one. Replace the placeholder links with your actual video and document URLs.</p>
+  <p class="lede">Everything a new cashier or manager needs on day one.</p>
   <div class="res-grid">
     <div class="card">
       <h3>Training videos</h3>
@@ -422,11 +426,10 @@
   <div>
     <span class="eyebrow">Contact</span>
     <h2>Talk to the office</h2>
+    <p class="lede" style="margin-top:18px">Wholesale pricing, delivery scheduling, store locations, and career questions all go through the office. Send a request and we'll respond within one business day.</p>
     <dl>
-      <dt>Wholesale</dt><dd><a href="tel:+15010000000">(501) 000-0000</a><br>fuel@quickmart.us</dd>
-      <dt>Store support</dt><dd><a href="tel:+15010000000">(501) 000-0000</a></dd>
-      <dt>Careers</dt><dd>careers@quickmart.us</dd>
-      <dt>Office</dt><dd>Street address<br>City, AR 72000</dd>
+      <dt>Wholesale desk</dt><dd>Monday – Friday, 7am – 5pm</dd>
+      <dt>Careers</dt><dd><a href="#apply">Apply online</a> or bring a printed application to any store</dd>
     </dl>
   </div>
   <div class="card">
